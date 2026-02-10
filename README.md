@@ -2,13 +2,25 @@
 
 Angular practice and mini-projects for front-end job preparation.
 
-This repository contains my Angular learning, practice code,
-and mini-projects as part of my front-end job preparation.
+## Projects
+
+### Employee Management System
+
+Angular-based Employee Management application created as part of front-end job preparation.
+
+#### Planned Features
+
+- Employee list
+- Add / Edit employee
+- Routing
+- Forms & validation
+- Services for data handling
 
 ## Tech Stack
+
 - Angular
 - TypeScript
 - HTML
 - CSS
 
-Status: Actively updating (Feb 2026)
+Status: In progress
