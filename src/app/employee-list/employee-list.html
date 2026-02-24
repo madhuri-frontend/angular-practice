@@ -1,0 +1,26 @@
+<p>Employee Management System</p>
+
+<h2>Add Employee</h2>
+
+<input type="text" placeholder="Name" [(ngModel)]="newEmployee.name" />
+
+<input type="text" placeholder="Role" [(ngModel)]="newEmployee.role" />
+
+<button (click)="addEmployee()">Add</button>
+
+<hr />
+
+<h2>Employee List</h2>
+
+<table border="1" cellpadding="10">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Role</th>
+  </tr>
+  <tr *ngFor="let emp of employees">
+    <td>{{ emp.id }}</td>
+    <td>{{ emp.name }}</td>
+    <td>{{ emp.role }}</td>
+  </tr>
+</table>
