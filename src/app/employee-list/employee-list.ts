@@ -35,4 +35,7 @@ export class EmployeeList {
       this.newEmployee = { id: 0, name: '', role: '' };
     }
   }
+  deleteEmployee(id: number) {
+    this.employees = this.employees.filter((emp) => emp.id !== id);
+  }
 }
