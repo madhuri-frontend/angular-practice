@@ -24,18 +24,34 @@ export class EmployeeList {
 
   addEmployee() {
     if (this.newEmployee.name && this.newEmployee.role) {
-      const newId = this.employees.length + 1;
+      if (this.editingEmployeeId !== null) {
+        // UPDATE
+        this.employees = this.employees.map((emp) =>
+          emp.id === this.editingEmployeeId ? { ...this.newEmployee } : emp,
+        );
 
-      this.employees.push({
-        id: newId,
-        name: this.newEmployee.name,
-        role: this.newEmployee.role,
-      });
+        this.editingEmployeeId = null;
+      } else {
+        // ADD
+        const newId = this.employees.length + 1;
+
+        this.employees.push({
+          id: newId,
+          name: this.newEmployee.name,
+          role: this.newEmployee.role,
+        });
+      }
 
       this.newEmployee = { id: 0, name: '', role: '' };
     }
   }
   deleteEmployee(id: number) {
     this.employees = this.employees.filter((emp) => emp.id !== id);
+  }
+
+  editingEmployeeId: number | null = null;
+  editEmployee(emp: any) {
+    this.newEmployee = { ...emp };
+    this.editingEmployeeId = emp.id;
   }
 }
