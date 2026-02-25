@@ -1,17 +1,16 @@
-<p>Employee Management System</p>
-
 <h2>Add Employee</h2>
 
 <input type="text" placeholder="Name" [(ngModel)]="newEmployee.name" />
 
 <input type="text" placeholder="Role" [(ngModel)]="newEmployee.role" />
 
-<button (click)="addEmployee()">Add</button>
+<button class="primary" (click)="addEmployee()">
+  {{ editingEmployeeId !== null ? 'Update' : 'Add' }}
+</button>
 
 <hr />
 
 <h2>Employee List</h2>
-
 <table>
   <tr>
     <th>ID</th>
@@ -24,7 +23,8 @@
     <td>{{ emp.name }}</td>
     <td>{{ emp.role }}</td>
     <td>
-      <button (click)="deleteEmployee(emp.id)">Delete</button>
+      <button class="edit" (click)="editEmployee(emp)">Edit</button>
+      <button class="delete" (click)="deleteEmployee(emp.id)">Delete</button>
     </td>
   </tr>
 </table>
